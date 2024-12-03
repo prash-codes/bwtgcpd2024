@@ -1,4 +1,4 @@
-import snowflake.connector # type: ignore
+import snowflake.connector 
 
 class SnowflakeConnector:
     def __init__(self, account, user, password, warehouse, database, schema, role):
@@ -51,7 +51,7 @@ sf_connector = SnowflakeConnector(
 
 sf_connector.connect()
 
-query = "select * from SNOWFLAKE_SAMPLE_DATA.TPCH_SF10.SUPPLIER"
+query = "select * from SNOWFLAKE_SAMPLE_DATA.TPCH_SF10.SUPPLIER limit 10"
 result = sf_connector.execute_query(query)
 
 print(result)
